@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+    <section id="header" style="background-color:#2B343F;">
+      <div class="header container">
+        <div class="nav-bar">
+          <div class="brand">
+            <a href="#hero">
+              <h1><span>Bina </span>Karya Alam</h1>
+            </a>
+          </div>
+          <div class="nav-list">
+            <div class="hamburger">
+              <div class="bar"></div>
+            </div>
+            <ul>
+              <li><a href="index.html" data-after="Home">Home</a></li>
+              <li><a href="about.html" data-after="About">About</a></li>
+              <li><a href="slider.html" data-after="Projects">Projects</a></li>
+              <li><a href="#" data-after="Buku Tamu">Buku Tamu</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end header section -->
+    <section class="contact" id="contact">
+      <h1 class="heading-contact"><span>CONTACT</span> US</h1>
+      <h2>Tertarik dengan Bina Karya Alam?</h2>
+      <h2>Tulis Nama, Alamat Email dan no telp Anda di kotak bawah ini, kami akan mengirimkan company profile dan memberikan survei serta konsultasi GRATIS.</h2>
+      <form style="padding-top: 3rem;" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+      <div class="inputBox">
+        <input type="text" name="fname" placeholder="Name">
+        <input type="email" name="femail" placeholder="Email">
+      </div>
+      <div class="inputBox">
+        <input type="number" name="fnumber" placeholder="Number">
+        <input type="text" name="fsubject" placeholder="Subject">
+      </div>
+      <textarea name="fmessage" id="" cols="30" rows="10"></textarea>
+      <input type="submit" value="Send Message" name="submit" class="cta-submit">
+      </form>
+      <section style="font-size: 20px; text-align:center">
+      <?php
+      if (isset($_POST['submit'])){
+        $nama = $_POST['fname'];
+        $email = $_POST['femail'];
+        $number = $_POST['fnumber'];
+        $subject = $_POST['fsubject'];
+        $message = $_POST['fmessage'];
+
+        echo "<br><br>";
+        echo "===DETAIL MESSAGE===";
+        echo "<br>";
+        echo "Nama : $nama";
+        echo "<br>";
+        echo "Email : $email";
+        echo "<br>";
+        echo "Number : $number";
+        echo "<br>";
+        echo "Subject : $subject";
+        echo "<br>";
+        echo "Message : $message";
+        echo "<br><br>";
+      }
+      
+      ?>
+      </section>
+    </section>
+    <!-- footer section -->
+    <section id="footer" class="footer">
+        <div class="footer container">
+          <div class="brand">
+            <h1><span>BINA</span> KARYA ALAM</h1>
+          </div>
+          <h2>Your Complete Building Solution</h2>
+          <div class="social-icon">
+            <div class="social-item">
+              <a href="https://www.facebook.com/zakydafalaseka/"><img src="https://img.icons8.com/doodle/192/000000/facebook-new.png"/></a>
+            </div>
+            <div class="social-item">
+              <a href="https://www.instagram.com/zakydfls/"><img src="https://img.icons8.com/doodle/192/000000/instagram--v1.png"/></a>
+            </div>
+            <div class="social-item">
+              <a href="https://wa.me/6287818696652"><img src="https://img.icons8.com/doodle/192/000000/whatsapp.png"/></a>
+            </div>
+            <div class="social-item">
+              <a href="https://twitter.com/DafalasEka"><img src="https://img.icons8.com/doodle/192/000000/twitter--v1.png"/></a>
+            </div>
+          </div>
+        </div>
+      <div class="footer container">
+        <div class="brand">
+        <p>Copyright © 2022 Bina Karya Alam. All rights reserved</p>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+    </body>
+</html>
